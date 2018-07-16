@@ -61,10 +61,33 @@ void test2() {
 	mydelete(8);
 }
 
+void test3() {
+	root = NULL;
+	printf("\n/////////////////////////\n");
+	myinsert(10);
+	myinsert(85);
+	myinsert(15);
+	myinsert(70);
+	myinsert(20);
+	myinsert(60);
+	myinsert(30);
+	myinsert(50);
+	myinsert(65);
+	myinsert(80);
+	myinsert(90);
+	myinsert(40);
+	myinsert(5);
+	myinsert(55);
+
+	mydelete(30);
+	mydelete(65);
+}
+
 int main(int argc, char **argv)
 {
 	test1();
 	test2();
+	test3();
 
 	return 0;
 }
