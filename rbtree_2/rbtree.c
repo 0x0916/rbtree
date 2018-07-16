@@ -286,7 +286,7 @@ void delete_node(RBTree *tree , RBNode *z) {
 		z->key = y->key;
 
 	if (y->color == BLACK)
-		rb_delete_fixup(tree, x);
+		rb_delete_fixup(tree, x); // x是真正删除结点的子结点
 
 	free(y); //删除结点为红色，直接删除即可
 }

@@ -6,7 +6,7 @@ typedef struct _RBNode {
 	int key;
 	int color;
 	struct _RBNode *parent, *left, *right;
-} RBNode, *RBTree;
+} RBNode;
 
 static RBNode _NIL = {0, BLACK, NULL, NULL, NULL};
 #define LEAF	&_NIL

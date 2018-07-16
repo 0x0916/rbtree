@@ -355,7 +355,7 @@ RBNode* delete_node(RBNode* root, RBNode *n) {
 	if (y != n) 
 		n->key = y->key;
 
-	rb_delete_fixup(y);
+	rb_delete_fixup(y); // y是真正要删除的结点
 
 	// find the new root to return
 	root = x;
