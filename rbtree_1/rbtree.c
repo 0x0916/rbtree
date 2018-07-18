@@ -47,13 +47,13 @@ void rotate_left(RBNode* n) { // n =x, y = nnew
 	if (!is_leaf(nnew->left)) {
 		nnew->left->parent = n;
 	}
-	nnew->parent = n->parent;
+	nnew->parent = parent(n);
 
 	if (n->parent != NULL) {
-		if (n == n->parent->left)
-			n->parent->left = nnew;
+		if (n == parent(n)->left)
+			parent(n)->left = nnew;
 		else
-			n->parent->right = nnew;
+			parent(n)->right = nnew;
 	}
 	nnew->left = n;
 	n->parent = nnew;
@@ -69,10 +69,10 @@ void rotate_right(RBNode* n) {
 	}
 	nnew->parent = n->parent;
 	if (n->parent != NULL) {
-		if (n == n->parent->right)
-			n->parent->right = nnew;
+		if (n == parent(n)->right)
+			parent(n)->right = nnew;
 		else
-			n->parent->left = nnew;
+			parent(n)->left = nnew;
 	}
 	nnew->right = n;
 	n->parent = nnew;
@@ -335,7 +335,8 @@ RBNode* delete_node(RBNode* root, RBNode *n) {
 	if (is_leaf(n->left) || is_leaf(n->right))
 		y = n;
 	else
-		y = successor(n);
+//		y = successor(n);
+		y = predecessor(n);
 
 	// x是y的子结点
 	if (!is_leaf(y->left))
